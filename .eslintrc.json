@@ -30,8 +30,7 @@
             "tab"
         ],
         "linebreak-style": [
-            "error",
-            "unix"
+            "none"
         ],
         "quotes": [
             "error",
