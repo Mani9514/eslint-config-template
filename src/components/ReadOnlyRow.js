@@ -8,7 +8,7 @@ const ReadOnlyRow = ({ ticket, handleEditClick}) => {
 			<td>{ticket.serialNumber}</td>
 			<td>{ticket.ticketDate}</td>
 			<td>{ticket.addedOn}</td>
-			<td><button type="button" onClick={(event)=>handleEditClick(event, ticket)}>Edit</button></td>
+			<td ><button type="button" onClick={(event)=>handleEditClick(event, ticket)}>Edit</button></td>
 		</tr>
 	);
 };

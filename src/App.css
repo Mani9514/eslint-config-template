@@ -9,54 +9,73 @@
 .app-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
   padding: 3rem;
 }
 table {
   border-collapse: collapse;
   width: 100%;
   border: none;
+  
 }
 th,
 td {
   border: none;
   border-bottom: 1px solid var(--dark-color);
   text-align: center;
-  padding: 4px;
+  padding: 0rem;
   font-size: 16px;
+
 }
+
 th {
   background-color: var(--success-color);
-  padding: 0.75rem;
+  padding: 0.85rem;
 }
 td {
   background-color: rgb(205, 235, 253);
+  padding: 0.5rem;
 }
 tr:nth-last-child(1) td {
   border: none;
 }
 .tableContainer {
-  height: 600px;
-  overflow: auto;
-  position: relative;
+  height: 512px;
+  min-width: 100%;
+  margin-top: 20px;
+  display: flex;
+flex-direction: column;
+overflow-y: auto;
+}
+.tableContainer::-webkit-scrollbar {
+  width: 4px;
 }
 
+/* Track */
 .tableContainer::-webkit-scrollbar-track {
-  background: #ff0;
+  background: #f1f1f1; 
+  border-radius: 12px;
 }
+ 
+/* Handle */
 .tableContainer::-webkit-scrollbar-thumb {
-  width: 8px;
+  background: #888; 
+  border-radius: 12px;
+}
+
+/* Handle on hover */
+.tableContainer::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 form {
   display: flex;
   gap: 5px;
 }
-form td:last-child {
-  display: flex;
-  justify-content: space-evenly;
+.NewRow button:nth-child(1){
+margin-right: 12px;
 }
 form * {
-  font-size: 20px;
+  font-size: 16px;
 }
 button {
   padding: 0.5rem 1rem;
@@ -68,20 +87,28 @@ button {
   font-weight: 600;
   transition: 0.5s ease;
   cursor: pointer;
+  font-size: 0.85rem;
 }
 button:hover {
   background-color: #fff;
   border: 1px solid rgb(117, 201, 250);
-  /* outline: none; */
   border-radius: 0.25rem;
   color: #0000ff;
   font-weight: 600;
 }
+
 input {
   border: none;
-  border-bottom: 1px solid #ff0;
-  padding: 0.5rem;
+  border-bottom: 1px solid #000;
+  padding: 0.5rem 1rem;
   outline: none;
+  border-radius: 0.25rem;
+  font-size: 16px;
+  background-color: var(--light-color);
+}
+input::placeholder{
+
+  font-size: 16px;
 }
 h1,
 h2,
@@ -96,4 +123,13 @@ h6 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.tableOuterContainer{
+  background: #fff;
+  padding: 1.5rem 1.5rem;
+  border-radius: 1rem;
+}
+.searchSection{
+  display: flex;
+  justify-content: space-between;
 }

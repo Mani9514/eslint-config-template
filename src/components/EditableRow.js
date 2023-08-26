@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-const EditableRow = ({editFormData, handleEditFormChange, handleCancelClick}) => {
+const EditableRow = ({ticket, editFormData, handleEditFormChange, handleCancelClick}) => {
 	return (
 		<tr>
 			<td>
+				{ticket.id}
 			</td>
 			<td>
 				<input 
@@ -25,7 +26,7 @@ const EditableRow = ({editFormData, handleEditFormChange, handleCancelClick}) =>
 				onChange={handleEditFormChange}
 			/></td>
 			<td><input placeholder="Enter Secret Code"  name="secretCode" required="required" type="text" onChange={handleEditFormChange}/></td>
-			<td>
+			<td className="NewRow">
 				<button type="submit">Save</button> 
 				<button type="button" onClick={handleCancelClick}>Cancel</button>
 			</td>

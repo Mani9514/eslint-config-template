@@ -4,19 +4,13 @@ import {React, useState} from "react";
 import data from "./data.json";
 import ReadOnlyRow from "./components/ReadOnlyRow";
 import EditableRow from "./components/EditableRow";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 function App() {
 	var [date,setDate] = useState(new Date());
-    
-	useEffect(() => {
-		var timer = setInterval(()=>setDate(new Date()), 1000 );
-		return function cleanup() {
-			clearInterval(timer);
-		};
-    
-	});
+	console.log(setDate);
 	const [tickets, setTickets] = useState(data);
-	// const [editTicket, setEditTicket] = useState(null);
+	const [search, setSearch] = useState("");
+	console.log(search);
 	const [addFormData, setAddFromData] = useState({
 		serialNumber:"",
 		ticketDate:"",
@@ -103,6 +97,7 @@ function App() {
 	const handleCancelClick = () =>{
 		setEditTicketId(null);
 	};
+
 	return (
 		<div className="app-container">
 			<div className="innerContainerheading">
@@ -112,41 +107,57 @@ function App() {
 				</div>
 				<p style={{textAlign:"right"}}> {date.toLocaleDateString()+"     "+ date.toLocaleTimeString()}</p>
 			</div>
-			<form onSubmit={handleEditFormSubmit} className="tableContainer">
-				<table>
-					<thead>
-						<tr>
-							<th>S.No</th>
-							<th>Ticket Number</th>
-							<th>Ticket Date</th>
-							<th>Added on</th>
-							<th>Action</th>
-						</tr>
-					</thead>
-					<tbody>
-						{tickets.map((ticket)=>(
-							<>
-								{editTicketId === ticket.id ?(
-									<EditableRow 
-										editFormData={editFormData} 
-										key={ticket.id}
-										handleEditFormChange={handleEditFormChange}
-										handleCancelClick={handleCancelClick}
-									/> 
-								)
-									:
-									<ReadOnlyRow 
-										handleEditClick={handleEditClick} 
-										key={ticket.id} 
-										ticket={ticket} 
-									/>}
-							</>
-						))}
-					</tbody>
-				</table>
-			</form>
+			<div className="tableOuterContainer">
+				<div className="searchSection">
+					<input 
+						type="search"
+						placeholder="Search Ticker Number..."
+						name="searchTicket"
+						onChange={(e)=>setSearch(e.target.value)}
+					/>
+					<button>Login</button>
+				</div>
+				<form onSubmit={handleEditFormSubmit} className="tableContainer">
+					<table>
+						<thead>
+							<tr>
+								<th>S.No</th>
+								<th>Ticket Number</th>
+								<th>Ticket Date</th>
+								<th>Added on</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							{tickets.filter((item)=>{
+								return search.toLowerCase()=== ""? item : item.serialNumber.toLowerCase().includes(search);
+							}).map((ticket)=>(
+								<>
+									{console.log(tickets.length)}
+									{editTicketId === ticket.id  ?(
+										<EditableRow 
+											editFormData={editFormData} 
+											key={ticket.id}
+											ticket={ticket} 
+											handleEditFormChange={handleEditFormChange}
+											handleCancelClick={handleCancelClick}
+										/> 
+									)
+										: 
+										<ReadOnlyRow 
+											handleEditClick={handleEditClick} 
+											key={ticket.id} 
+											ticket={ticket} 
+										/>}
+								</>
+							))}
+						</tbody>
+					</table>
+				</form>
+			</div>
+			
 			<h2>Add New Ticket</h2>
-			<form onSubmit={handleAddFormSubmit}>
+			<form onSubmit={handleAddFormSubmit} className="secondForm">
 				<input 
 					type="text"
 					placeholder="Enter Ticket Number"
