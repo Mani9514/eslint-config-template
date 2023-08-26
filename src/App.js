@@ -6,7 +6,7 @@ import ReadOnlyRow from "./ReadOnlyRow";
 import EditableRow from "./EditableRow";
 function App() {
 	const [tickets, setTickets] = useState(data);
-	const [editTicket, setEditTicket] = useState(null);
+	// const [editTicket, setEditTicket] = useState(null);
 	const [addFormData, setAddFromData] = useState({
 		serialNumber:"",
 		ticketDate:"",
@@ -79,7 +79,7 @@ function App() {
 	};
 	const handleEditClick = (event, ticket) =>{
 		event.preventDefault();
-		setEditTicket(ticket.id);
+		setEditTicketId(ticket.id);
 
 		const formValues ={
 			serialNumber: ticket.serialNumber,
@@ -88,6 +88,10 @@ function App() {
 			addedOn:addFormData.addedOn,
 		};
 		setEditFormData(formValues);
+	};
+
+	const handleCancelClick = () =>{
+		setEditTicketId(null);
 	};
 	return (
 		<div className="app-container">
@@ -105,11 +109,12 @@ function App() {
 					<tbody>
 						{tickets.map((ticket)=>(
 							<>
-								{editTicket === ticket.id ?(
+								{editTicketId === ticket.id ?(
 									<EditableRow 
 										editFormData={editFormData} 
 										key={ticket.id}
-										handleEditFormChange={handleEditFormChange} 
+										handleEditFormChange={handleEditFormChange}
+										handleCancelClick={handleCancelClick}
 									/> 
 								)
 									:
