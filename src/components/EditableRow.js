@@ -9,7 +9,7 @@ const EditableRow = ({editFormData, handleEditFormChange, handleCancelClick}) =>
 			<td>
 				<input 
 					type="text"
-					placeholder="Enter Serial Number"
+					placeholder="Enter Ticket Number"
 					name="serialNumber"
 					required="required"
 					onChange={handleEditFormChange}

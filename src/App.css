@@ -1,25 +1,51 @@
+:root {
+  --primary-color: #003366;
+  --secondary-color: #ffd700;
+  --light-color: #f5f5f5;
+  --dark-color: #333333;
+  --success-color: #4caf50;
+  --error-color: #ff5733;
+}
 .app-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 1rem;
+  padding: 3rem;
 }
 table {
   border-collapse: collapse;
   width: 100%;
+  border: none;
 }
 th,
 td {
-  border: 1px solid #ffffff;
+  border: none;
+  border-bottom: 1px solid var(--dark-color);
   text-align: center;
-  padding: 8px;
+  padding: 4px;
   font-size: 16px;
 }
 th {
-  background-color: rgb(117, 201, 250);
+  background-color: var(--success-color);
+  padding: 0.75rem;
 }
 td {
   background-color: rgb(205, 235, 253);
+}
+tr:nth-last-child(1) td {
+  border: none;
+}
+.tableContainer {
+  height: 600px;
+  overflow: auto;
+  position: relative;
+}
+
+.tableContainer::-webkit-scrollbar-track {
+  background: #ff0;
+}
+.tableContainer::-webkit-scrollbar-thumb {
+  width: 8px;
 }
 form {
   display: flex;
@@ -33,7 +59,7 @@ form * {
   font-size: 20px;
 }
 button {
-  padding: 7.5px 30px;
+  padding: 0.5rem 1rem;
   background-color: rgb(117, 201, 250);
   border: 1px solid rgb(117, 201, 250);
   /* outline: none; */
@@ -41,13 +67,33 @@ button {
   color: #0000ff;
   font-weight: 600;
   transition: 0.5s ease;
+  cursor: pointer;
 }
 button:hover {
-  padding: 7.5px 30px;
   background-color: #fff;
   border: 1px solid rgb(117, 201, 250);
   /* outline: none; */
   border-radius: 0.25rem;
   color: #0000ff;
   font-weight: 600;
+}
+input {
+  border: none;
+  border-bottom: 1px solid #ff0;
+  padding: 0.5rem;
+  outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+.innerContainerheading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

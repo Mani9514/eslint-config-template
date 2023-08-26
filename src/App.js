@@ -2,9 +2,19 @@ import "./App.css";
 import {nanoid} from "nanoid";
 import {React, useState} from "react";
 import data from "./data.json";
-import ReadOnlyRow from "./ReadOnlyRow";
-import EditableRow from "./EditableRow";
+import ReadOnlyRow from "./components/ReadOnlyRow";
+import EditableRow from "./components/EditableRow";
+import { useEffect } from "react";
 function App() {
+	var [date,setDate] = useState(new Date());
+    
+	useEffect(() => {
+		var timer = setInterval(()=>setDate(new Date()), 1000 );
+		return function cleanup() {
+			clearInterval(timer);
+		};
+    
+	});
 	const [tickets, setTickets] = useState(data);
 	// const [editTicket, setEditTicket] = useState(null);
 	const [addFormData, setAddFromData] = useState({
@@ -95,12 +105,19 @@ function App() {
 	};
 	return (
 		<div className="app-container">
-			<form onSubmit={handleEditFormSubmit}>
+			<div className="innerContainerheading">
+				<div>
+					<h1>Lottery Ticket Details</h1>
+					<p>Total Data Available - {tickets.length} </p>
+				</div>
+				<p style={{textAlign:"right"}}> {date.toLocaleDateString()+"     "+ date.toLocaleTimeString()}</p>
+			</div>
+			<form onSubmit={handleEditFormSubmit} className="tableContainer">
 				<table>
 					<thead>
 						<tr>
 							<th>S.No</th>
-							<th>Serial Number</th>
+							<th>Ticket Number</th>
 							<th>Ticket Date</th>
 							<th>Added on</th>
 							<th>Action</th>
@@ -132,7 +149,7 @@ function App() {
 			<form onSubmit={handleAddFormSubmit}>
 				<input 
 					type="text"
-					placeholder="Enter Serial Number"
+					placeholder="Enter Ticket Number"
 					name="serialNumber"
 					required="required"
 					onChange={handleAddFormChange}
