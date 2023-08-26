@@ -1,0 +1,140 @@
+[
+  {
+    "id": 1,
+    "serialNumber": 123456,
+    "ticketDate": "01-08-2023",
+    "addedOn": "8/26/2023, 12:52:19 PM"
+  },
+  {
+    "id": 2,
+    "serialNumber": 123456,
+    "ticketDate": "01-08-2023",
+    "addedOn": "8/26/2023, 12:52:19 PM"
+  },
+
+  {
+    "id": 3,
+    "serialNumber": 123456,
+    "ticketDate": "01-08-2023",
+    "addedOn": "28-07-2023"
+  },
+
+  {
+    "id": 4,
+    "serialNumber": 123456,
+    "ticketDate": "01-08-2023",
+    "addedOn": "28-07-2023"
+  },
+
+  {
+    "id": 5,
+    "serialNumber": 123456,
+    "ticketDate": "01-08-2023",
+    "addedOn": "28-07-2023"
+  },
+
+  {
+    "id": 6,
+    "serialNumber": 123456,
+    "ticketDate": "01-08-2023",
+    "addedOn": "28-07-2023"
+  },
+
+  {
+    "id": 7,
+    "serialNumber": 123456,
+    "ticketDate": "01-08-2023",
+    "addedOn": "28-07-2023"
+  },
+
+  {
+    "id": 8,
+    "serialNumber": 123456,
+    "ticketDate": "01-08-2023",
+    "addedOn": "28-07-2023"
+  },
+
+  {
+    "id": 9,
+    "serialNumber": 123456,
+    "ticketDate": "01-08-2023",
+    "addedOn": "28-07-2023"
+  },
+
+  {
+    "id": 10,
+    "serialNumber": 123456,
+    "ticketDate": "01-08-2023",
+    "addedOn": "28-07-2023"
+  },
+
+  {
+    "id": 11,
+    "serialNumber": 123456,
+    "ticketDate": "01-08-2023",
+    "addedOn": "28-07-2023"
+  },
+
+  {
+    "id": 12,
+    "serialNumber": 123456,
+    "ticketDate": "01-08-2023",
+    "addedOn": "28-07-2023"
+  },
+
+  {
+    "id": 13,
+    "serialNumber": 123456,
+    "ticketDate": "01-08-2023",
+    "addedOn": "28-07-2023"
+  },
+
+  {
+    "id": 14,
+    "serialNumber": 123456,
+    "ticketDate": "01-08-2023",
+    "addedOn": "28-07-2023"
+  },
+
+  {
+    "id": 15,
+    "serialNumber": 123456,
+    "ticketDate": "01-08-2023",
+    "addedOn": "28-07-2023"
+  },
+
+  {
+    "id": 16,
+    "serialNumber": 123456,
+    "ticketDate": "01-08-2023",
+    "addedOn": "28-07-2023"
+  },
+
+  {
+    "id": 17,
+    "serialNumber": 123456,
+    "ticketDate": "01-08-2023",
+    "addedOn": "28-07-2023"
+  },
+
+  {
+    "id": 18,
+    "serialNumber": 123456,
+    "ticketDate": "01-08-2023",
+    "addedOn": "28-07-2023"
+  },
+
+  {
+    "id": 19,
+    "serialNumber": 123456,
+    "ticketDate": "01-08-2023",
+    "addedOn": "28-07-2023"
+  },
+
+  {
+    "id": 20,
+    "serialNumber": 123456,
+    "ticketDate": "01-08-2023",
+    "addedOn": "28-07-2023"
+  }
+]
